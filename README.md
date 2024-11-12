@@ -2,8 +2,11 @@
 
 # Meta - Django Web Framework 
 
-![Screenshot_2023-01-15_15-48-56](https://user-images.githubusercontent.com/54184905/212542140-1e131690-3681-4542-a50d-7f3a8d39ae58.png)
+![Screenshot](static/img/Screenshot (1))
 
+![Screenshot](static/img/Screenshot (2))
+
+![Screenshot](static/img/Screenshot (3))
 ```bash
 # run
 python3 manage.py runserver
