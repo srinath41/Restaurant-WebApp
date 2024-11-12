@@ -2,8 +2,8 @@
 
 # Meta - Django Web Framework
 
-![Screenshot 1](https://raw.githubusercontent.com/srinath41/Restaurant-WebApp/main/restaurant/static/img/Screenshot%20(1).png)
-![Screenshot 2](https://raw.githubusercontent.com/srinath41/Restaurant-WebApp/main/restaurant/static/img/Screenshot%20(2).png)
+![Screenshot 1](https://raw.githubusercontent.com/srinath41/Restaurant-WebApp/main/restaurant/static/img/Screenshot%20(1).png)<br>
+![Screenshot 2](https://raw.githubusercontent.com/srinath41/Restaurant-WebApp/main/restaurant/static/img/Screenshot%20(2).png)<br>
 ![Screenshot 3](https://raw.githubusercontent.com/srinath41/Restaurant-WebApp/main/restaurant/static/img/Screenshot%20(3).png)
 ```bash
 # run
