@@ -2,9 +2,9 @@
 
 # Meta - Django Web Framework
 
-![Screenshot 1](https://raw.githubusercontent.com/srinath41/Restaurant-WebApp/restaurant/static/img/Screenshot%20(1).png)
-![Screenshot 2](https://raw.githubusercontent.com/srinath41/Restaurant-WebApp/restaurant/static/img/Screenshot%20(2).png)
-![Screenshot 3](https://raw.githubusercontent.com/srinath41/Restaurant-WebApp/restaurant/static/img/Screenshot%20(3).png)
+![Screenshot 1](https://github.com/srinath41/Restaurant-WebApp/tree/main/restaurant/static/img/Screenshot%20(1).png)
+![Screenshot 2](https://github.com/srinath41/Restaurant-WebApp/tree/main/restaurant/static/img/Screenshot%20(2).png)
+![Screenshot 3](https://github.com/srinath41/Restaurant-WebApp/tree/main/restaurant/static/img/Screenshot%20(3).png)
 ```bash
 # run
 python3 manage.py runserver
