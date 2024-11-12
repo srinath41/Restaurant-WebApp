@@ -1,0 +1,56 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<section>
+  <article>
+    <h1>About Us</h1>
+    <!--Begin row-->
+    <div class="row">
+      <!--Begin col-->
+      <div class="column">
+        <p>
+          Based in Vijayawada, Andhra Pradesh, Little Lemon is a family-owned Indian restaurant, specializing in traditional Indian flavors with a modern twist.
+        </p>
+        
+        <p>
+          The chefs are inspired by various regional cuisines of India, including North Indian, South Indian, and a touch of coastal flavors, offering a menu of 12-15 dishes that rotate seasonally.
+        </p>
+        
+        <p>
+          The restaurant features a cozy and inviting atmosphere with a blend of traditional Indian decor and contemporary touches, making it a favorite spot for meals at any time of the day.
+        </p>
+        
+        <p>
+          Little Lemon is owned by four passionate individuals, Karthik, Sai, Manoj, and John, who grew up in Vijayawada and decided to pursue their dream of opening a restaurant that celebrates authentic Indian flavors.
+        </p>
+        
+        <p>
+          To curate the menu, Karthik relies on age-old family recipes passed down through generations, with a deep focus on bringing out the bold and rich flavors of Indian cuisine.
+        </p>
+        
+        <p>
+          Sai handles the marketing and operations of the restaurant, and has expanded the menu to include dishes from various regions of India, offering a diverse and delightful dining experience.
+        </p>
+        
+        <p>
+          Manoj oversees the kitchen, ensuring that each dish is prepared to perfection, while John manages the overall ambiance and customer experience, making sure every guest feels welcome.
+        </p>
+      </div>
+      <!--End col-->
+
+      <!--Begin col-->
+      <div class="column">
+        <figure class="figure">
+          <img
+            src="{% static 'img/mario-and-adrian.jpg' %}"
+            alt="Mario and Adrian"
+          />
+          <figcaption class="figure-caption">
+            Little Lemon owners Karthik Manoj Sai and John.
+          </figcaption>
+        </figure>
+      </div>
+      <!--End col-->
+    </div>
+    <!--End row-->
+  </article>
+</section>
+{% endblock %}
