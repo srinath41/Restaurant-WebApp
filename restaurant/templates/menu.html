@@ -1,23 +1,28 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<h1>Menu</h1>
-<!--Begin col-->
-<div class="column">
-   <!-- Step 14: Create for loop -->
-   {% for item in menu %}
-   <p>
-      <!-- Step 14: Add DTL variable for name -->
-      <a href="{% url 'menu_item' pk=item.pk %}">
-        {{ item.name }}
+<h1 class="menu-title">Our Menu</h1>
+
+<!-- Menu Container -->
+<div class="menu-container">
+    <!-- Loop through menu items -->
+    {% for item in menu %}
+    <div class="menu-item-card">
+        <a href="{% url 'menu_item' pk=item.pk %}" class="menu-item-link">
+            <div class="menu-item-header">
+                <h3>{{ item.name }}</h3>
+                <span class="menu-price">{{ item.price }}.00 INC</span>
+            </div>
+            <div class="menu-item-body">
+                <p class="menu-item-description">
+                    Delicious, freshly prepared {{ item.name }} with authentic flavors.
+                </p>
+            </div>
+            <div class="column">
+               <img src="{% static 'img/' %}{{item.name}}.jpg" alt="{{ item.name}}" />
+           </div>
         </a>
-      <span class="menu-price">
-         <!-- Step 14: Add DTL variable for price --> 
-         {{ item.price }}.00 INC
-      </span>
-   </p>
-   <!-- Step 14: End or loop -->
-   {% endfor %}
+    </div>
+    {% endfor %}
 </div>
-<!--End col-->
 {% endblock %}

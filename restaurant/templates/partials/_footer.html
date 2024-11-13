@@ -1,19 +1,18 @@
 {% load static %}
 <footer>
-  <article>
-    <a href="https://github.com/srinath41/Restaurant-WebApp" target="_blank">
-    <img src="{% static 'img/logo_footer.png' %}" alt="Little Lemon Logo" />
-    </a>
-  </article>
-  
-  
-  
-  <article style="text-align: right;">
-    <p>&copy; Little Lemon</p>
-    <h3><span>
-      <a href="https://github.com/srinath41" target="_blank">
+  <article class="footer-content">
+    <div class="footer-left">
+      <div class="logo"><a href="https://github.com/srinath41/Restaurant-WebApp" target="_blank">
+        <img src="{% static 'img/logo_footer.png' %}" alt="Little Lemon Logo" />
+      </a></div>
+      <p>&copy; Little Lemon</p>
+    </div>
+    <div class="footer-right">
+      <div class="git"><a href="https://github.com/srinath41" target="_blank">
         <img src="{% static 'img/github-logo.png' %}" alt="GitHub Profile" style="width: 20px; height: 20px;" />
-      </a>
-    </span><span style="font-weight: normal;">Developed by</span> <span style="font-weight: bold;">Srinath</span></h3>
+      </a></div>
+      <h3><span style="font-weight: normal;">Developed by</span>
+      <span style="font-weight: bold;">Srinath</span></h3>
+    </div>
   </article>
 </footer>

@@ -1,255 +1,498 @@
+/* General Styles */
 body {
     font-family: 'Karla', sans-serif;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin: 3rem 5%;
+    color: #2C3E50;
+    background-color: #FAFAFA;
+    line-height: 1.6;
 }
-
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Markazi Text', serif;
-    letter-spacing: 2px;;
+    letter-spacing: 1.5px;
+    color: #2C3E50;
 }
 
 h1 {
-    font-size: 4rem;
+    font-size: 4.5rem;
     margin-top: 1.5rem;
-    margin-bottom: 0;
+    text-align: center;
+    font-weight: bold;
+    color: #34495E;
 }
 
 h2 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     color: #333333;
-    margin:1rem 0;
+    margin: 2rem 0;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
-p, ul{
-    font-size: 1.25rem;;
+h3 {
+    font-size: 2rem;
+    color: #555555;
+}
+
+p, ul {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: #5D6D7E;
 }
 
 a {
     color: #EE9972;
     text-decoration: none;
+    transition: all 0.3s ease;
 }
 
 a:hover {
+    color: #34495E;
     text-decoration: underline;
 }
 
-header img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 100%;
-    height: auto;
+/* Header Styles */
+header {
+    background-color: transparent;
+    padding: 1.5rem 0;
+    text-align: center;
 }
 
+header img {
+    display:block;
+    max-width: 300px;
+    margin: 0 auto;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
 
+header img:hover {
+    transform: scale(1.1);
+}
+
+/* Navigation Bar */
 nav {
-    background-color: #495E57;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    margin-bottom: 0px;
+    background-color: #34495E;
+    padding: 1rem 0;
+    text-align: center;
 }
 
 nav ul {
     list-style: none;
-    font-size: 1.5rem;
-    text-align: center;
-    padding-inline-start: 0rem;
-    margin-bottom: 0px;
+    padding: 0;
+    margin: 0;
 }
 
 nav ul li {
-    display: inline-block;
-    margin: 0.5rem;
+    display: inline;
+    margin: 0 1rem;
 }
 
-nav ul a {
-    color: #EDEFEE;
-    text-decoration: none;
+nav ul li a {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease;
 }
 
-nav ul a:active {
-    text-decoration: underline;
+nav ul li a:hover {
+    background-color: #e0dcd9;
+    border-radius: 5px;
 }
 
-nav ul a:hover {
-    text-decoration: underline;
-    text-decoration-thickness: 0.1rem;
+/* Hero Section */
+#hero {
+    position: relative; /* Ensure the pseudo-element is positioned relative to the container */
+    background-image: url('../img/restaurant_inside.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 8rem 2rem;
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-section {
-    display: flex;
-    gap: 2rem 1rem;
-    margin-top: 1rem;
+#hero::after {
+    content: ""; /* Empty content */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+    border-radius: 10px; /* Match the border radius of the container */
+    z-index: 1; /* Ensure the overlay is above the background but below the text */
+}
+
+#hero > * {
+    position: relative;
+    z-index: 2; /* Ensure the text content is above the overlay */
+}
+
+
+#hero .heading_shadow {
+    font-size: 4rem;
+    font-weight: 700;
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.7);
     margin-bottom: 1rem;
-    flex-direction: row;
+}
+
+#hero p {
+    font-size: 1.5rem;
+    margin: 1.5rem 0;
+    font-weight: 400;
+    color: rgb(196, 193, 193);
+}
+
+#hero h1{
+    color:rgb(240, 240, 240);
+}
+
+#hero .cta {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    background-color: transparent;
+    color: #ffffff;
+    border-radius: 5px;
+    border: 2px solid white;
+    transition: background-color 0.3s ease;
+}
+
+#hero .cta:hover {
+    background-color: #ffffff;
+    color: #34495E;
+    border-radius: 5px;
+    border: 2px solid #34495E;
+}
+
+/* Section Styling */
+section {
+    margin: 3rem 0;
 }
 
 article {
-    flex:1;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centers the text inside the article */
 }
 
 article img {
     max-width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
 }
 
-article ul {
-    list-style: none;
+article img:hover {
+    transform: scale(1.05);
 }
 
-main article {
-    border: 1px solid #EDEFEE;
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
-
-figure {
-    margin: 0;
-}
-
-label {
-    font-weight: bold;
-    display: block;
-  }
-
-input{
-    width: 80%;
-    display: block;
-    padding: .5rem 1rem;
-    line-height: 1.5rem;
-    box-sizing: border-box;
-}
-
-#button {
-    padding: .5rem 1rem;
-    border: 1px solid #495E57;
-    background-color:#495E57;;
-    border-radius: 5px;
-    width: 80%;
-    font-size: 1.25rem;
-    display: block;
-    color: #fff;
-    line-height: 25px;
-  }
-
-#hero {
-    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8)), url('../img/restaurant_inside.jpg');
-    background-size: cover;
-    background-position: 75%;
-    color: white;
-    min-height: 200px;
-    text-align: center;;
-}
-
-#hero p {
-    font-size: 2rem;
-    margin:0;
-    text-shadow: 2px 2px 4px #333333;
-}
-
-.cta { 
-    display: inline-block; 
-    color: rgba(255, 255, 255, 0.9);
-    width: 200px; 
-    font-weight: bold; 
-    font-size: 1.5rem;
-    padding: 8px; 
-    border: 3px solid #fff; 
-    text-align: center; 
-    outline: none; 
-    text-decoration: none; 
-    margin: 1rem;
-} 
-
-.cta:hover {
-    color:#fff;
-    background:#495E57;
-    border: 3px solid #495E57; 
-  }
-
-  .heading-shadow {
-    text-shadow: 1px 1px 4px #333333;
-  }
-
+/* Footer Styles */
 footer {
-    background-color: #EDEFEE;
-    padding: 1rem;
-    display: flex;
-    gap: 2rem 1rem;
+    background-color: #2C3E50; /* Updated background color */
+    padding: 0.5rem 1rem; /* Reduced padding for a smaller footer height */
+    color: #EDEFEE; /* Updated text color */
+    height: 90px; /* Set fixed height */
 }
 
-footer img {
-    max-width: 50%;
+footer .footer-content {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space between left and right content */
+    height: 25px; /* Full height of the footer */
+    width: 95%; /* Set width to 95% */
+}
+
+footer .footer-left, footer .footer-right {
+    display: flex;
+    align-items: center; /* Vertically align items */
+    gap: 1rem; /* Add space between elements */
+}
+
+footer .footer-left p {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: -10px; /* Move copyright text upwards */
+}
+
+footer .footer-right h3 {
+    font-size: 1rem;
+    color: #333333;
+    margin: 0;
+    margin-top: -10px; /* Move 'Developed by' text upwards */
+}
+
+footer .footer-left .logo img {
+    width: 40px; /* Adjust logo size */
+    height: auto;
+}
+
+footer .footer-right .git img {
+    width: 50px; /* Adjust GitHub icon size */
+    height: 50px;
+}
+
+footer .footer-right a {
+    color: #EDEFEE;
+    transition: color 0.3s ease;
+}
+
+footer .footer-right a:hover {
+    color: #EE9972;
 }
 
 footer p {
-    border-top: #333333;
-    border-style: solid;
-    border-width: 0.1rem;
-    border-bottom: none;
-    border-left: none;
-    border-right: none;
-    text-align: right;
-    padding-top: 1rem;;
-}
-
-.row {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    padding-bottom: 1rem;
-  }
-
-  .column {
-    flex-basis: 50%;
-    margin-bottom: 1rem;
-    padding-bottom: 1rem;
-  }
-
-  .column figure {
-    padding: 0px 12px;
-
-  }
-
-
-  .videowrap {
-	position: relative;
-	padding-bottom: 56.25%; /* 16:9 */
-	padding-top: 1rem;
-	height: 0;
-}
-.videowrap iframe {
-	position: absolute;
-    margin-top: 2rem;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-}
-
-.menu-price{
-    display: block;
     font-size: 1rem;
+    color: #979b9e;
+    margin-top: 1rem;
 }
 
-@media (max-width: 800px) {
-    section {
-        flex-direction: column;   
+
+/* Buttons */
+input[type="submit"], .cta, .button {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    background-color: #EE9972;
+    color: white;
+    border: none;
+    border-radius: 30px; /* Rounded edges for a softer look */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+input[type="submit"]:hover, .cta:hover, .button:hover {
+    background-color: #C0392B;
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+/* Form and Inputs */
+form {
+    background-color: #ffffff;
+    padding: 2rem 3rem;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+}
+
+form:hover {
+    transform: scale(1.02); /* Slight zoom-in effect on hover */
+}
+
+form h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Form inputs */
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="number"],
+form textarea {
+    width: 100%;
+    padding: 1rem;
+    margin: 0.75rem 0;
+    border-radius: 10px; /* Slightly rounded edges */
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: #f9f9f9; /* Light background for inputs */
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="tel"]:focus,
+form input[type="number"]:focus,
+form textarea:focus {
+    border-color: #EE9972;
+    box-shadow: 0 0 5px rgba(238, 153, 114, 0.6); /* Soft glow effect */
+    outline: none;
+}
+
+form textarea {
+    height: 150px; /* A little extra height for the textarea */
+    resize: vertical;
+}
+
+form label {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+/* Placeholder text styling */
+form input::placeholder,
+form textarea::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+/* Input focus effect */
+form input[type="text"]:focus::placeholder,
+form input[type="email"]:focus::placeholder,
+form input[type="tel"]:focus::placeholder,
+form input[type="number"]:focus::placeholder,
+form textarea:focus::placeholder {
+    color: #EE9972; /* Placeholder color on focus */
+}
+
+
+/* General Styling for the Menu Page */
+.menu-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+    margin: 2rem 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.menu-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Ensures 3 items per row */
+    gap: 1.5rem;
+    padding: 2rem;
+    justify-items: center;
+}
+
+/* Menu Item Card Styling */
+.menu-item-card {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    height: 400px; /* Fixed height for consistent card size */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Hover Effects for Cards */
+.menu-item-card:hover {
+    transform: translateY(-5px); /* Lift the card on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.menu-item-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header Styling */
+.menu-item-header {
+    background-color: #34495E;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 15px 15px 0 0;
+    flex-grow: 1; /* Ensures the header takes up the necessary space */
+}
+
+.menu-item-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Description Styling */
+.menu-item-body {
+    padding: 1rem;
+    background-color: #f9f9f9;
+    flex-grow: 2; /* Ensures the description section grows to fill space */
+}
+
+.menu-item-description {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Price Styling */
+.menu-price {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #333;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* Hover Animations for Menu Items */
+.menu-item-card:hover .menu-item-body {
+    background-color: #f2f2f2;
+    transition: background-color 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu-title {
+        font-size: 2rem;
+    }
+    .menu-container {
+        grid-template-columns: 1fr 1fr; /* 2 items per row for medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-container {
+        grid-template-columns: 1fr; /* 1 item per row for smaller screens */
+    }
+}
+
+
+
+
+
+/* Media Queries */
+@media (max-width: 768px) {
+    body {
+        margin: 1.5rem;
     }
 
-    .row {
+    #hero {
+        padding: 5rem 1rem;
+    }
+
+    .footer-content {
         flex-direction: column;
-        width: 100%;
-      }
-   
-    input{
-        width: 100%;
+        text-align: center;
     }
 
-    #button{
-        width: 100%;
+    .footer-left, .footer-right {
+        margin-bottom: 1.5rem;
     }
-  }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin-bottom: 1rem;
+    }
+}
