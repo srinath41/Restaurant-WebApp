@@ -5,35 +5,94 @@
 <section>
   <article>
     <h1>Make a reservation</h1>
-    <!--Begin row-->
+    <!-- Begin row -->
     <div class="row">
-      <!--Begin col-->
+      <!-- Begin col -->
       <div class="column">
-        <form action="" method="post">
+        <form id="booking-form" method="post">
           {% csrf_token %}
-          {{form.as_p}}
-          <input type="submit" id="button">
+          {{ form.as_p }}
+          <input type="submit" id="button" value="Submit">
         </form>
       </div>
-      <!--End col-->
+      <!-- End col -->
       <br><br>
-      <!--Begin col-->
+      <!-- Begin col -->
       <div class="column">
         <div class="videowrap">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.7719244277655!2d80.66407231418073!3d16.49447918861812!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a35f5b46b5a9ad9%3A0xa56f5d57e1eaa1d0!2sAjit%20Singh%20Nagar%2C%20Vijayawada%2C%20Andhra%20Pradesh%2C%20India!5e0!3m2!1sen!2sus!4v1662384760663!5m2!1sen!2sus
-"
-            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.7719244277655!2d80.66407231418073!3d16.49447918861812!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a35f5b46b5a9ad9%3A0xa56f5d57e1eaa1d0!2sAjit%20Singh%20Nagar%2C%20Vijayawada%2C%20Andhra%20Pradesh%2C%20India!5e0!3m2!1sen!2sus!4v1662384760663!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
-      <!--End col-->
+      <!-- End col -->
     </div>
-    <!--End row-->
-
-
-
-
+    <!-- End row -->
   </article>
 </section>
+
+<div id="success" style="display:none;">
+  <p>Your reservation has been successfully submitted!</p>
+</div>
+
+<div id="error" style="display:none;">
+  <p>There was an error submitting your reservation. Please try again later.</p>
+</div>
 {% endblock %}
+
+<script>
+  document.getElementById("booking-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+
+    // Check if required fields are empty
+    const firstName = formData.get('first_name');
+    const lastName = formData.get('last_name');
+    const guestNumber = formData.get('guest_number');
+    const comment = formData.get('comment');
+    const email = formData.get('email');
+    
+    if (!firstName || !lastName || !guestNumber || !comment || !email) {
+        alert("Please fill in all the required fields.");
+        return;
+    }
+
+    // Validate Guest Number to be a positive integer
+    if (isNaN(guestNumber) || guestNumber <= 0) {
+        alert("Please enter a valid number for Guest Number.");
+        return;
+    }
+
+    // Basic email validation
+    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    if (!emailPattern.test(email)) {
+        alert("Please enter a valid email address.");
+        return;
+    }
+
+    formData.append('csrfmiddlewaretoken', document.querySelector('[name="csrfmiddlewaretoken"]').value);
+
+    fetch("https://getform.io/f/bpjmkdxb", {
+        method: "POST",
+        body: formData,
+        headers: {
+            "Accept": "application/json",
+        },
+    })
+    .then(response => {
+        if (response.ok) {
+            $('#booking-form :input').attr('disabled', 'disabled');
+            $('#booking-form').fadeTo("slow", 1, function () {
+                $('#success').fadeIn();
+            });
+        } else {
+            throw new Error("Form submission failed");
+        }
+    })
+    .catch(error => {
+        console.error(error);
+        $('#booking-form').fadeTo("slow", 1, function () {
+            $('#error').fadeIn();
+        });
+    });
+});
+
+</script>
