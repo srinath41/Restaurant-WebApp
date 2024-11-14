@@ -1,18 +1,7 @@
-![](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue) ![](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=green) ![](https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white)
+Now you are in Beta Branch of the Repo, where parellel development is happening. You can see the changes made by the other developers in the branch. You can also make changes and commit them to the branch. But remember
+- You can't push the changes to the main branch directly from the Beta Branch.
+- You can't merge the changes from the main branch to the Beta Branch directly.
 
-# Meta - Django Web Framework
+Project Under Development.
 
 ![Screenshot 1](https://raw.githubusercontent.com/srinath41/Restaurant-WebApp/main/restaurant/static/img/Screenshot%20(1).png)<br>
-![Screenshot 2](https://raw.githubusercontent.com/srinath41/Restaurant-WebApp/main/restaurant/static/img/Screenshot%20(2).png)<br>
-![Screenshot 3](https://raw.githubusercontent.com/srinath41/Restaurant-WebApp/main/restaurant/static/img/Screenshot%20(3).png)
-```bash
-# run
-python3 manage.py runserver
-```
-
-```bash
-# open
-http://127.0.0.1:8000/
-```
-
-[Course Link](https://www.coursera.org/learn/django-web-framework)
